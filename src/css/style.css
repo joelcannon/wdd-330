@@ -251,11 +251,11 @@ footer {
   display: block;
 }
 
-/* #map {
-  height: 100%;
-} */
 #map {
-  height: 500px;
+  height: 100%;
+}
+#map {
+  /* height: 500px; */
   width: 100%;
 }
 
@@ -263,4 +263,17 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
+}
+
+html,
+body,
+main,
+#map {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#map {
+  width: 100%;
 }
