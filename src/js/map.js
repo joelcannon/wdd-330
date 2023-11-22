@@ -1,5 +1,6 @@
 import { Loader } from '@googlemaps/js-api-loader';
 import { loadMarkersFromLocalStorage } from './utils.mjs';
+import { loadMarkersFromJsonFile } from './externalServices.mjs';
 /* global google */
 
 const loader = new Loader({
@@ -16,12 +17,25 @@ loader.load().then(() => {
   });
 
   let markers = loadMarkersFromLocalStorage();
-  markers.forEach((markerData) => {
-    new google.maps.Marker({
-      position: markerData.position,
-      map: map,
+
+  if (markers.length === 0) {
+    loadMarkersFromJsonFile().then((data) => {
+      markers = data;
+      markers.forEach((markerData) => {
+        new google.maps.Marker({
+          position: markerData.position,
+          map: map,
+        });
+      });
     });
-  });
+  } else {
+    markers.forEach((markerData) => {
+      new google.maps.Marker({
+        position: markerData.position,
+        map: map,
+      });
+    });
+  }
 
   // Add click event listener to map
   google.maps.event.addListener(map, 'click', function (event) {
