@@ -1,9 +1,12 @@
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
+import pkg from './package.json';
 
 export default defineConfig({
   root: 'src/',
-
+  // define: {
+  //   'process.env.VITE_APP_VERSION': JSON.stringify(pkg.version),
+  // },
   build: {
     outDir: '../dist',
     rollupOptions: {

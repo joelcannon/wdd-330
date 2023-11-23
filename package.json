@@ -1,6 +1,6 @@
 {
   "name": "grid-guardian",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "WDD 330 personal project",
   "main": "main.js",
   "scripts": {

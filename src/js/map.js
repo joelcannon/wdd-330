@@ -1,6 +1,9 @@
 import { Loader } from '@googlemaps/js-api-loader';
 import { loadMarkersFromLocalStorage } from './utils.mjs';
 import { loadMarkersFromJsonFile } from './externalServices.mjs';
+
+// console.log(import.meta.env.VITE_APP_VERSION);
+
 /* global google */
 
 const loader = new Loader({
