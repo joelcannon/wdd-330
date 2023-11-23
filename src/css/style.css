@@ -12,6 +12,8 @@
   --font-base: 18px;
   --small-font: 0.8em;
   --large-font: 1.2em;
+
+  --header-height: 45px;
 }
 * {
   box-sizing: border-box;
@@ -29,19 +31,16 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 0 10px;
+  height: var(--header-height);
 }
 .logo {
-  line-height: 45px;
+  line-height: 45px; /* --header-height */
   width: 245px;
   overflow: hidden;
   display: flex;
   font-size: 30px;
   text-align: right;
   font-family: var(--font-headline);
-}
-.logo img {
-  width: 60px;
-  height: 60px;
 }
 .logo a {
   text-decoration: none;
@@ -222,6 +221,7 @@ footer {
 }
 
 .dropdown-button {
+  padding: 0.4em 1.7em;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -251,29 +251,16 @@ footer {
   display: block;
 }
 
+main {
+  height: calc(100vh - var(--header-height));
+}
+
 #map {
   height: 100%;
-}
-#map {
-  /* height: 500px; */
   width: 100%;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-}
-
-html,
-body,
-main,
-#map {
-  height: 100%;
   margin: 0;
   padding: 0;
 }
 
 #map {
-  width: 100%;
 }
