@@ -1,6 +1,6 @@
 {
   "name": "grid-guardian",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "WDD 330 personal project",
   "main": "main.js",
   "scripts": {
@@ -34,6 +34,7 @@
     "last 3 safari versions"
   ],
   "dependencies": {
-    "@googlemaps/js-api-loader": "^1.16.2"
+    "@googlemaps/js-api-loader": "^1.16.2",
+    "@googlemaps/markerclusterer": "^2.5.1"
   }
 }
