@@ -1,5 +1,5 @@
 import { MarkerClusterer } from '@googlemaps/markerclusterer';
-import { loadMarkersFromJsonFile } from './externalServices.mjs';
+import { loadZipMarkersFromJsonFile } from './externalServices.mjs';
 
 /* global google */
 async function initMap() {
@@ -23,7 +23,7 @@ async function initMap() {
   const labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
   // Load locations from JSON file
-  const tempMarkers = await loadMarkersFromJsonFile();
+  const tempMarkers = await loadZipMarkersFromJsonFile();
   const locations = tempMarkers.map((item) => item.position);
 
   // Add some markers to the map.
