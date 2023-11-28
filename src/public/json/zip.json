@@ -1,0 +1,50 @@
+[
+  {
+    "CC": "US",
+    "PC": 64640,
+    "PN": "Gallatin",
+    "AN1": "Missouri",
+    "AC1": "MO",
+    "AN2": "Daviess",
+    "AC2": "061",
+    "AN3": "",
+    "AC3": "",
+    "position": {
+      "lat": 39.9025,
+      "lng": -93.9787
+    },
+    "ACC": 4
+  },
+  {
+    "CC": "US",
+    "PC": 64642,
+    "PN": "Gilman City",
+    "AN1": "Missouri",
+    "AC1": "MO",
+    "AN2": "Daviess",
+    "AC2": "061",
+    "AN3": "",
+    "AC3": "",
+    "position": {
+      "lat": 40.145,
+      "lng": -93.832
+    },
+    "ACC": 4
+  },
+  {
+    "CC": "US",
+    "PC": 64647,
+    "PN": "Jameson",
+    "AN1": "Missouri",
+    "AC1": "MO",
+    "AN2": "Daviess",
+    "AC2": "061",
+    "AN3": "",
+    "AC3": "",
+    "position": {
+      "lat": 40.0046,
+      "lng": -93.9597
+    },
+    "ACC": 4
+  }
+]
