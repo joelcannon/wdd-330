@@ -1,5 +1,5 @@
 import { MarkerClusterer } from '@googlemaps/markerclusterer';
-import { loadZipMarkersFromJsonFile } from './externalServices.mjs';
+import { loadDeviceMarkersFromJsonFile } from './externalServices.mjs';
 
 /* global google */
 async function initMap() {
@@ -23,32 +23,41 @@ async function initMap() {
   const labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
   // Load locations from JSON file
-  const tempMarkers = await loadZipMarkersFromJsonFile();
+  const tempMarkers = await loadDeviceMarkersFromJsonFile();
   const locations = tempMarkers.map((item) => item.position);
 
   // Add some markers to the map.
   //   const markers = locations.map((position, i) => {
-  const markers = tempMarkers.map((zip, i) => {
-    const label = labels[i % labels.length];
-    const pinGlyph = new google.maps.marker.PinElement({
-      glyph: label,
+  const markers = tempMarkers.map((device, i) => {
+    // A marker using a Font Awesome icon for the glyph.
+    const icon = document.createElement('div');
+    icon.innerHTML = '<i class="fab fa-viacoin" aria-hidden="true"></i>'; //  const faPin = new PinElement({
+    const faPin = new google.maps.marker.PinElement({
+      glyph: icon,
       glyphColor: 'white',
+      background: 'darkgreen',
+      borderColor: 'white',
     });
 
-    //  const testposition = { lat: zip.LAT, lng: zip.LON };
-    const testposition = zip.position;
-    console.log(testposition);
+    // const testposition = device.position;
+    // console.log(testposition);
+
+    const priceTag = document.createElement('div');
+
+    priceTag.className = 'price-tag';
+    //  priceTag.textContent = '$2.5M';
+    priceTag.innerHTML =
+      '<i class="fab fa-viacoin icon-shadow" aria-hidden="true"></i>';
 
     const marker = new google.maps.marker.AdvancedMarkerElement({
-      // position: { lat: +zip.LAT, lng: +zip.LON },
-      position: zip.position,
-      content: pinGlyph.element,
+      position: device.position,
+      content: priceTag,
     });
 
-    const contentString = `<div class='Zip Code'><b>${zip.PC}</b></div>
-    <div class='city'>${zip.PN}</div>
-    <div class='county'>
-    ${zip.AN2}, ${zip.AC1}
+    const contentString = `<div class='d_name'><b>${device.name}</b></div>
+    <div class='d_status'>${device.status}</div>
+    <div class='d_stats'>
+    ${device.temp}°F, ${device.battery}%, ${device.voltage}v
     </div>`;
 
     // markers can only be keyboard focusable when they have click listeners
