@@ -45,7 +45,13 @@ async function initMap() {
     const priceTag = document.createElement('div');
 
     priceTag.className = 'price-tag';
-    //  priceTag.textContent = '$2.5M';
+
+    if (device.status === 'Critical') {
+      priceTag.classList.add('critical');
+    } else if (device.status === 'Warning') {
+      priceTag.classList.add('warning');
+    }
+
     priceTag.innerHTML =
       '<i class="fab fa-viacoin icon-shadow" aria-hidden="true"></i>';
 

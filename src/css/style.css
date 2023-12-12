@@ -291,3 +291,11 @@ main {
   border-right: 8px solid transparent;
   border-top: 8px solid #4285f4;
 } */
+
+.critical {
+  color: red;
+}
+
+.warning {
+  color: yellow;
+}

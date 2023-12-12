@@ -206,7 +206,7 @@
    {
       "id": 17,
       "name": "KW5HS7",
-      "status": "warning",
+      "status": "Warning",
       "temp": 83.2,
       "battery": 35,
       "voltage": 241,
@@ -218,7 +218,7 @@
    {
       "id": 18,
       "name": "NK9XP4",
-      "status": "critical",
+      "status": "Critical",
       "temp": 160.6,
       "battery": 78,
       "voltage": 241,
