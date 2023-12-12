@@ -122,8 +122,8 @@
    {
       "id": 10,
       "name": "ZG5JA9",
-      "status": "Normal",
-      "temp": 83.0,
+      "status": "Critical",
+      "temp": 165.0,
       "battery": 85,
       "voltage": 242,
       "position": {
@@ -134,9 +134,9 @@
    {
       "id": 11,
       "name": "BX4QK5",
-      "status": "Normal",
-      "temp": 83.0,
-      "battery": 91,
+      "status": "Warning",
+      "temp": 83.1,
+      "battery": 15,
       "voltage": 242,
       "position": {
          "lat": 39.94000089096174,
@@ -206,9 +206,9 @@
    {
       "id": 17,
       "name": "KW5HS7",
-      "status": "Warning",
+      "status": "Normal",
       "temp": 83.2,
-      "battery": 35,
+      "battery": 44,
       "voltage": 241,
       "position": {
          "lat": 39.953894890216304,
@@ -218,8 +218,8 @@
    {
       "id": 18,
       "name": "NK9XP4",
-      "status": "Critical",
-      "temp": 160.6,
+      "status": "Normal",
+      "temp": 83.2,
       "battery": 78,
       "voltage": 241,
       "position": {
