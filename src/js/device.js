@@ -22,7 +22,7 @@ async function initMap() {
     disableAutoPan: true,
   });
   // Create an array of alphabetical characters used to label the markers.
-  const labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  // const labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
   // Load locations from JSON file
   const tempMarkers = await loadDeviceMarkersFromJsonFile();
@@ -40,22 +40,22 @@ async function initMap() {
       borderColor: 'white',
     });
 
-    const priceTag = document.createElement('div');
+    const detail = document.createElement('div');
 
-    priceTag.className = 'price-tag';
+    detail.className = 'detail';
 
     if (device.status === 'Critical') {
-      priceTag.classList.add('critical');
+      detail.classList.add('critical');
     } else if (device.status === 'Warning') {
-      priceTag.classList.add('warning');
+      detail.classList.add('warning');
     }
 
-    priceTag.innerHTML =
+    detail.innerHTML =
       '<i class="fab fa-viacoin icon-shadow" aria-hidden="true"></i>';
 
     const marker = new google.maps.marker.AdvancedMarkerElement({
       position: device.position,
-      content: priceTag,
+      content: detail,
     });
 
     const contentString = `<div class='d_name'><b>${device.name}</b></div>
