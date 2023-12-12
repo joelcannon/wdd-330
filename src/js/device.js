@@ -10,7 +10,6 @@ async function initMap() {
   );
   const map = new google.maps.Map(document.getElementById('map'), {
     zoom: 15,
-    //  center: { lat: -28.024, lng: 140.887 },
     center: { lat: 39.93459, lng: -93.924026 },
     mapTypeId: 'satellite',
     mapId: 'DEMO_MAP_ID',
@@ -27,20 +26,16 @@ async function initMap() {
   const locations = tempMarkers.map((item) => item.position);
 
   // Add some markers to the map.
-  //   const markers = locations.map((position, i) => {
   const markers = tempMarkers.map((device, i) => {
     // A marker using a Font Awesome icon for the glyph.
     const icon = document.createElement('div');
-    icon.innerHTML = '<i class="fab fa-viacoin" aria-hidden="true"></i>'; //  const faPin = new PinElement({
+    icon.innerHTML = '<i class="fab fa-viacoin" aria-hidden="true"></i>';
     const faPin = new google.maps.marker.PinElement({
       glyph: icon,
       glyphColor: 'white',
       background: 'darkgreen',
       borderColor: 'white',
     });
-
-    // const testposition = device.position;
-    // console.log(testposition);
 
     const priceTag = document.createElement('div');
 
@@ -69,7 +64,6 @@ async function initMap() {
     // markers can only be keyboard focusable when they have click listeners
     // open info window when marker is clicked
     marker.addListener('click', () => {
-      // infoWindow.setContent(position.lat + ', ' + position.lng);
       infoWindow.setContent(contentString);
       infoWindow.open(map, marker);
     });
