@@ -1,47 +1,62 @@
-((g) => {
-  var h,
-    a,
-    k,
-    p = 'The Google Maps JavaScript API',
-    c = 'google',
-    l = 'importLibrary',
-    q = '__ib__',
-    m = document,
-    b = window;
-  b = b[c] || (b[c] = {});
-  var d = b.maps || (b.maps = {}),
-    r = new Set(),
-    e = new URLSearchParams(),
-    u = () => {
-      if (!h) {
-        h = new Promise((f, n) => {
-          a = m.createElement('script');
-          e.set('libraries', [...r] + '');
-          for (k in g)
-            e.set(
-              k.replace(/[A-Z]/g, (t) => '_' + t[0].toLowerCase()),
-              g[k]
-            );
-          e.set('callback', c + '.maps.' + q);
-          a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
-          d[q] = f;
-          a.onerror = () => {
-            h = null;
-            n(Error(p + ' could not load.'));
-          };
-          a.nonce = m.querySelector('script[nonce]')?.nonce || '';
-          m.head.append(a);
-        });
-      }
-      return h;
-    };
-  d[l]
-    ? console.warn(p + ' only loads once. Ignoring:', g)
-    : (d[l] = (f, ...n) => {
-        r.add(f);
-        return u().then(() => d[l](f, ...n));
-      });
-})({
+// Function to load the Google Maps API
+function loadGoogleMapsAPI(config) {
+  var loadPromise,
+    scriptElement,
+    key,
+    googleMapsAPI = 'The Google Maps JavaScript API',
+    google = 'google',
+    importLibrary = 'importLibrary',
+    callbackFunctionName = '__ib__',
+    documentRef = document,
+    windowRef = window;
+
+  // Ensure the google and maps objects exist on the window
+  windowRef = windowRef[google] || (windowRef[google] = {});
+  var maps = windowRef.maps || (windowRef.maps = {}),
+    libraries = new Set(),
+    urlParams = new URLSearchParams(),
+    // Function to load the script
+    loadScript = () =>
+      loadPromise ||
+      (loadPromise = new Promise(async (resolve, reject) => {
+        // Create a new script element
+        await (scriptElement = documentRef.createElement('script'));
+        // Set the libraries URL parameter
+        urlParams.set('libraries', [...libraries] + '');
+        // Set the other URL parameters based on the config object
+        for (key in config)
+          urlParams.set(
+            key.replace(/[A-Z]/g, (char) => '_' + char[0].toLowerCase()),
+            config[key]
+          );
+        // Set the callback URL parameter
+        urlParams.set('callback', google + '.maps.' + callbackFunctionName);
+        // Set the script source
+        scriptElement.src =
+          `https://maps.${google}apis.com/maps/api/js?` + urlParams;
+        // Set the callback function to resolve the promise
+        maps[callbackFunctionName] = resolve;
+        // Set the error handler to reject the promise
+        scriptElement.onerror = () =>
+          (loadPromise = reject(Error(googleMapsAPI + ' could not load.')));
+        // Set the nonce attribute
+        scriptElement.nonce =
+          documentRef.querySelector('script[nonce]')?.nonce || '';
+        // Append the script element to the head of the document
+        documentRef.head.append(scriptElement);
+      }));
+
+  // If the importLibrary function already exists, log a warning
+  // Otherwise, define the importLibrary function
+  maps[importLibrary]
+    ? console.warn(googleMapsAPI + ' only loads once. Ignoring:', config)
+    : (maps[importLibrary] = (library, ...args) =>
+        libraries.add(library) &&
+        loadScript().then(() => maps[importLibrary](library, ...args)));
+}
+
+// Call the function with the API key and version
+loadGoogleMapsAPI({
   key: 'AIzaSyA5_4E24xxgD4akSaTxi1Bs2QRsSLEqOIM',
   v: 'weekly',
 });
