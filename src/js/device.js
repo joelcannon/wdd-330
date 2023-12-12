@@ -1,5 +1,8 @@
 import { MarkerClusterer } from '@googlemaps/markerclusterer';
 import { loadDeviceMarkersFromJsonFile } from './externalServices.mjs';
+import { loadHeader } from './utils.mjs';
+
+loadHeader();
 
 /* global google */
 async function initMap() {

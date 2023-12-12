@@ -3,6 +3,9 @@ import {
   saveMarkersToLocalStorage,
   loadMarkersFromLocalStorage,
 } from './utils.mjs';
+import { loadHeader } from './utils.mjs';
+
+loadHeader();
 
 /* global google */
 

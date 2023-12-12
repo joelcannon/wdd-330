@@ -15,19 +15,65 @@ export function setLocalStorage(key, data) {
 }
 // set a listener for both touchend and click
 export function setClick(selector, callback) {
-  qs(selector).addEventListener("touchend", (event) => {
+  qs(selector).addEventListener('touchend', (event) => {
     event.preventDefault();
     callback();
   });
-  qs(selector).addEventListener("click", callback);
+  qs(selector).addEventListener('click', callback);
 }
 
 export function saveMarkersToLocalStorage(markers) {
   const markersJson = JSON.stringify(markers);
-  localStorage.setItem("markers", markersJson);
+  localStorage.setItem('markers', markersJson);
 }
 
 export function loadMarkersFromLocalStorage() {
-  const markersJson = localStorage.getItem("markers");
+  const markersJson = localStorage.getItem('markers');
   return markersJson ? JSON.parse(markersJson) : [];
+}
+
+export async function renderWithTemplate(
+  templateFn,
+  parentElement,
+  callback,
+  data,
+  position = 'afterbegin',
+  clear = true
+) {
+  if (clear) {
+    parentElement.innerHTML = '';
+  }
+  const htmlString = await templateFn(data);
+  parentElement.insertAdjacentHTML(position, htmlString);
+
+  if (callback) {
+    callback(data);
+  }
+}
+
+function loadTemplate(path) {
+  return async function () {
+    const res = await fetch(path);
+    if (res.ok) {
+      const html = await res.text();
+      return html;
+    }
+  };
+}
+
+export async function loadHeader() {
+  const headerTemplateFn = loadTemplate('/partials/header.html');
+  const headerEl = document.querySelector('#main-header');
+  await renderWithTemplate(headerTemplateFn, headerEl);
+
+  // const searchForm = document.getElementById('search-form');
+
+  // searchForm.addEventListener('submit', function (event) {
+  //   event.preventDefault();
+
+  //   const searchFunction = handleProductSearch();
+  //   searchFunction();
+  // });
+
+  // renderWithTemplate(footerTemplateFn, footerEl);
 }
