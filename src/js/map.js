@@ -4,7 +4,6 @@ import { loadHeader, getParam } from './utils.mjs';
 
 loadHeader('Map');
 const deviceId = getParam('id');
-console.log(deviceId);
 
 /* global google */
 async function initMap(id) {
@@ -44,7 +43,7 @@ async function initMap(id) {
     const faPin = new google.maps.marker.PinElement({
       glyph: icon,
       glyphColor: 'white',
-      background: 'darkgreen',
+      background: 'green',
       borderColor: 'white',
     });
 
@@ -82,9 +81,6 @@ async function initMap(id) {
     });
     return marker;
   });
-
-  // Add a marker clusterer to manage the markers.
-  const markerCluster = new MarkerClusterer({ markers, map });
 }
 
 initMap(deviceId);
