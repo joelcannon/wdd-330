@@ -66,11 +66,13 @@ async function initMap(id) {
       content: detail,
     });
 
-    const contentString = `<div class='d_name'><b>${device.name}</b></div>
-    <div class='d_status'>${device.status}</div>
-    <div class='d_stats'>
+    const contentString = ` <div class='d_name'>
+    <b><a href="/device/index.html?id=${device.id}">${device.name}</a></b>
+  </div>
+  <div class='d_status'>${device.status}</div>
+  <div class='d_stats'>
     ${device.temp}°F, ${device.battery}%, ${device.voltage}v
-    </div>`;
+  </div>`;
 
     // markers can only be keyboard focusable when they have click listeners
     // open info window when marker is clicked

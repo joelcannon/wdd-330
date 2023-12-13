@@ -36,6 +36,29 @@ fetch('/json/device.json')
       document.getElementById(
         'device-voltage'
       ).textContent = `Voltage: ${foundDevice.voltage} v`;
+
+      // Get the div where the map will be placed
+      const mapDiv = document.getElementById('mini-map');
+
+      // Define the latitude, longitude, and zoom level for the map
+      const lat = foundDevice.position.lat.toFixed(4);
+      const lng = foundDevice.position.lng.toFixed(4);
+      const zoom = 18;
+
+      // Create the URL for the static map
+      const mapUrl = `https://maps.googleapis.com/maps/api/staticmap?center=${lat},${lng}&zoom=${zoom}&size=600x300&maptype=satellite&markers=color:red%7C${lat},${lng}&key=AIzaSyA5_4E24xxgD4akSaTxi1Bs2QRsSLEqOIM`;
+
+      // Create an img element
+      const img = document.createElement('img');
+      img.src = mapUrl;
+
+      // Create an a element
+      const a = document.createElement('a');
+      a.href = `/map/index.html?id=${foundDevice.id}`;
+      a.appendChild(img);
+
+      // Add the img to the div
+      mapDiv.appendChild(a);
     }
   })
   .catch((error) => console.error('Error:', error));
