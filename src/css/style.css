@@ -114,10 +114,10 @@ button {
 /* .mission {
   padding: 0 0.5em;
   /* margin: 0.5em 0; */
-  line-height: 1.3;
+/* line-height: 1.3;
   max-width: 600px;
   margin: auto;
-}
+} */
 .products {
   padding: 0.5em;
 }
@@ -199,9 +199,8 @@ button {
 .cart-card__price {
   grid-row: 2;
   grid-column: 3;
-} */
-
-@media screen and (min-width: 500px) {
+}
+*/ @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;
     margin: auto;
@@ -298,4 +297,98 @@ main {
 
 .warning {
   color: yellow;
+}
+
+/* Style the table */
+#notifications-table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-y: auto;
+  box-sizing: border-box; /* Include the scrollbar in the table's total width */
+}
+
+/* Style the table headers */
+#notifications-table th {
+  background-color: #f2f2f2;
+  text-align: left;
+  padding: 8px;
+}
+
+/* Style the table cells */
+#notifications-table td {
+  padding: 8px;
+  vertical-align: middle; /* Align the content to the middle */
+}
+
+/* Set the text alignment and width of the status column */
+#notifications-table td:nth-child(1) /* Status column */ {
+  text-align: center; /* Center the content */
+  width: 50px; /* Fixed width */
+}
+
+/* Alternate row colors */
+#notifications-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Set the text alignment and width of the timestamp column */
+#notifications-table td:nth-child(2) /* Timestamp column */ {
+  text-align: left; /* Left align the content */
+  width: 150px; /* Fixed width */
+}
+
+/* Set the text alignment of the message column */
+#notifications-table td:nth-child(3) /* Message column */ {
+  text-align: left; /* Left align the content */
+}
+
+/* Style the status indicators */
+.status-indicator {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 1px solid black; /* Add a black border */
+  margin: auto; /* Center the indicator */
+}
+
+.red {
+  background-color: #f00;
+}
+
+.yellow {
+  background-color: #ff0;
+}
+
+.green {
+  background-color: #0f0;
+}
+
+* Style the sort buttons */ .sort-button {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+/* Style the sort buttons on hover */
+.sort-button:hover {
+  background-color: #45a049;
+}
+
+/* Style the sortable column headings */
+.sortable {
+  cursor: pointer;
+  color: blue;
+}
+
+/* Style the selected column heading */
+.sortable.selected {
+  color: red;
 }

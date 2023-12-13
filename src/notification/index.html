@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Notice | GridGuardian</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <script src="/js/notification.mjs" type="module"></script>
+</head>
+<body>
+  <header class="divider" id="main-header"></header>
+  <main class="divider">
+      <table id="notifications-table">
+      <thead>
+        <tr>
+          <th class="sortable" data-sort="status">Status</th>
+          <th class="sortable" data-sort="timestamp">Timestamp</th>
+          <th>Message</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="status-indicator red"></span></td>
+          <td>2022-01-01 12:00:00</td>
+          <td><a href="more-info.html">Notification 1</a></td>
+        </tr>
+        <tr>
+          <td><span class="status-indicator yellow"></span></td>
+          <td>2022-01-02 12:00:00</td>
+          <td><a href="more-info.html">Notification 2</a></td>
+        </tr>
+        <!-- More rows as needed -->
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>
