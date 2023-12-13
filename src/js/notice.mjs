@@ -59,7 +59,7 @@ fetch('/json/notice.json')
       row.appendChild(timestampCell);
 
       const messageCell = document.createElement('td');
-      messageCell.innerHTML = `<a href="more-info.html">${item.message}</a>`;
+      messageCell.innerHTML = `<a href="/map/index.html?id=${item.deviceId}">${item.message}</a>`;
       row.appendChild(messageCell);
 
       // Add the row to the table body

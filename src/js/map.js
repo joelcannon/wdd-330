@@ -1,11 +1,13 @@
 import { MarkerClusterer } from '@googlemaps/markerclusterer';
 import { loadDeviceMarkersFromJsonFile } from './externalServices.mjs';
-import { loadHeader } from './utils.mjs';
+import { loadHeader, getParam } from './utils.mjs';
 
 loadHeader('Map');
+const deviceId = getParam('id');
+console.log(deviceId);
 
 /* global google */
-async function initMap() {
+async function initMap(id) {
   // Request needed libraries.
   const { Map, InfoWindow } = await google.maps.importLibrary('maps');
   const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary(
@@ -27,6 +29,12 @@ async function initMap() {
   // Load locations from JSON file
   const tempMarkers = await loadDeviceMarkersFromJsonFile();
   const locations = tempMarkers.map((item) => item.position);
+
+  // If an id is provided and it's a valid index in the locations array, recenter the map
+  if (id && locations[id]) {
+    map.setCenter(locations[id]);
+    map.setZoom(18); // Reset the zoom level to 18
+  }
 
   // Add some markers to the map.
   const markers = tempMarkers.map((device, i) => {
@@ -77,4 +85,4 @@ async function initMap() {
   const markerCluster = new MarkerClusterer({ markers, map });
 }
 
-initMap();
+initMap(deviceId);
