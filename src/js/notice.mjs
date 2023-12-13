@@ -3,7 +3,7 @@ import { loadHeader } from './utils.mjs';
 loadHeader('Notice');
 
 // Get the table element
-const table = document.getElementById('notifications-table');
+const table = document.getElementById('notice-table');
 
 // Get the table rows as an array
 const rows = Array.from(table.querySelectorAll('tbody tr'));
@@ -36,11 +36,11 @@ for (const sortable of sortables) {
 }
 
 // Fetch the JSON file
-fetch('/json/notification.json')
+fetch('/json/notice.json')
   .then((response) => response.json())
   .then((data) => {
     // Get the table body
-    const tbody = document.querySelector('#notifications-table tbody');
+    const tbody = document.querySelector('#notice-table tbody');
 
     // Create a table row for each item in the data
     for (const item of data) {

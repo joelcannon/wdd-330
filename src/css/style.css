@@ -153,7 +153,7 @@ main {
 }
 
 /* Style the table */
-#notifications-table {
+#notice-table {
   width: 100%;
   border-collapse: collapse;
   overflow-y: auto;
@@ -161,37 +161,37 @@ main {
 }
 
 /* Style the table headers */
-#notifications-table th {
+#notice-table th {
   background-color: #f2f2f2;
   text-align: left;
   padding: 8px;
 }
 
 /* Style the table cells */
-#notifications-table td {
+#notice-table td {
   padding: 8px;
   vertical-align: middle; /* Align the content to the middle */
 }
 
 /* Set the text alignment and width of the status column */
-#notifications-table td:nth-child(1) /* Status column */ {
+#notice-table td:nth-child(1) /* Status column */ {
   text-align: center; /* Center the content */
   width: 50px; /* Fixed width */
 }
 
 /* Alternate row colors */
-#notifications-table tr:nth-child(even) {
+#notice-table tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
 /* Set the text alignment and width of the timestamp column */
-#notifications-table td:nth-child(2) /* Timestamp column */ {
+#notice-table td:nth-child(2) /* Timestamp column */ {
   text-align: left; /* Left align the content */
   width: 150px; /* Fixed width */
 }
 
 /* Set the text alignment of the message column */
-#notifications-table td:nth-child(3) /* Message column */ {
+#notice-table td:nth-child(3) /* Message column */ {
   text-align: left; /* Left align the content */
 }
 
