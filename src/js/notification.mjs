@@ -46,12 +46,21 @@ fetch('/json/notification.json')
     for (const item of data) {
       const row = document.createElement('tr');
 
-      // Create a table cell for each property of the item
-      for (const key in item) {
-        const cell = document.createElement('td');
-        cell.textContent = item[key];
-        row.appendChild(cell);
-      }
+      // Create a status indicator for the status
+      const statusCell = document.createElement('td');
+      const statusIndicator = document.createElement('span');
+      statusIndicator.className = `status-indicator ${item.status.toLowerCase()}`;
+      statusCell.appendChild(statusIndicator);
+      row.appendChild(statusCell);
+
+      // Create a table cell for the timestamp and message
+      const timestampCell = document.createElement('td');
+      timestampCell.textContent = item.timestamp;
+      row.appendChild(timestampCell);
+
+      const messageCell = document.createElement('td');
+      messageCell.innerHTML = `<a href="more-info.html">${item.message}</a>`;
+      row.appendChild(messageCell);
 
       // Add the row to the table body
       tbody.appendChild(row);

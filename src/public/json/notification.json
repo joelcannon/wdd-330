@@ -1,12 +1,22 @@
 [
    {
       "status": "Critical",
-      "timestamp": "2022-01-01T00:00:00Z",
-      "message": "This is a critical notification."
+      "timestamp": "23-12-11 18:09",
+      "message": "Power Outage"
+   },
+   {
+      "status": "Critical",
+      "timestamp": "23-12-11 18:08",
+      "message": "Lightning Strike"
    },
    {
       "status": "Warning",
-      "timestamp": "2022-01-02T00:00:00Z",
-      "message": "This is a warning notification."
+      "timestamp": "23-12-10 10:32",
+      "message": "Low Battery"
+   },
+   {
+      "status": "Normal",
+      "timestamp": "23-12-08  9:08",
+      "message": "New Installation"
    }
 ]
