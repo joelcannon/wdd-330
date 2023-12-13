@@ -245,3 +245,16 @@ td .normal {
 .sortable.selected {
   color: red;
 }
+
+section {
+  padding: 20px;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+section p {
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+}
