@@ -1,230 +1,230 @@
 [
-   {
-      "id": 0,
-      "name": "QG4YC9",
-      "status": "Normal",
-      "temp": 83.1,
-      "battery": 90,
-      "voltage": 241,
-      "position": {
-         "lat": 39.93430206724242,
-         "lng": -93.9244953865776
-      }
-   },
-   {
-      "id": 1,
-      "name": "AB3CD6",
-      "status": "Normal",
-      "temp": 83.2,
-      "battery": 91,
-      "voltage": 242,
-      "position": {
-         "lat": 39.93461467989428,
-         "lng": -93.92446320006943
-      }
-   },
-   {
-      "id": 2,
-      "name": "DX4SZ3",
-      "status": "Normal",
-      "temp": 83.1,
-      "battery": 88,
-      "voltage": 241,
-      "position": {
-         "lat": 39.93542911141305,
-         "lng": -93.92419497916794
-      }
-   },
-   {
-      "id": 3,
-      "name": "KD9FJ7",
-      "status": "Normal",
-      "temp": 83.0,
-      "battery": 75,
-      "voltage": 242,
-      "position": {
-         "lat": 39.93282018008162,
-         "lng": -93.92582754597471
-      }
-   },
-   {
-      "id": 4,
-      "name": "MN9PW3",
-      "status": "Normal",
-      "temp": 83.2,
-      "battery": 91,
-      "voltage": 241,
-      "position": {
-         "lat": 39.93199749057335,
-         "lng": -93.92443279728697
-      }
-   },
-   {
-      "id": 5,
-      "name": "WV3GQ8",
-      "status": "Normal",
-      "temp": 83.0,
-      "battery": 54,
-      "voltage": 241,
-      "position": {
-         "lat": 39.93225327906664,
-         "lng": -93.92822422118013
-      }
-   },
-   {
-      "id": 6,
-      "name": "BP6SJ4",
-      "status": "Normal",
-      "temp": 83.2,
-      "battery": 89,
-      "voltage": 241,
-      "position": {
-         "lat": 39.93215455603006,
-         "lng": -93.93350280852144
-      }
-   },
-   {
-      "id": 7,
-      "name": "JE4UX5",
-      "status": "Normal",
-      "temp": 83.0,
-      "battery": 95,
-      "voltage": 242,
-      "position": {
-         "lat": 39.92934088963081,
-         "lng": -93.9333526048166
-      }
-   },
-   {
-      "id": 8,
-      "name": "FG1TW5",
-      "status": "Normal",
-      "temp": 83.2,
-      "battery": 66,
-      "voltage": 242,
-      "position": {
-         "lat": 39.93042687984082,
-         "lng": -93.92981208891695
-      }
-   },
-   {
-      "id": 9,
-      "name": "DP8JS5",
-      "status": "Normal",
-      "temp": 83.1,
-      "battery": 77,
-      "voltage": 240,
-      "position": {
-         "lat": 39.93209701578556,
-         "lng": -93.92253781219776
-      }
-   },
-   {
-      "id": 10,
-      "name": "ZG5JA9",
-      "status": "Critical",
-      "temp": 165.0,
-      "battery": 85,
-      "voltage": 242,
-      "position": {
-         "lat": 39.94319249773023,
-         "lng": -93.92411868903856
-      }
-   },
-   {
-      "id": 11,
-      "name": "BX4QK5",
-      "status": "Warning",
-      "temp": 83.1,
-      "battery": 15,
-      "voltage": 242,
-      "position": {
-         "lat": 39.94000089096174,
-         "lng": -93.92401140067797
-      }
-   },
-   {
-      "id": 12,
-      "name": "NW3SU2",
-      "status": "Normal",
-      "temp": 83.0,
-      "battery": 89,
-      "voltage": 242,
-      "position": {
-         "lat": 39.93618045826889,
-         "lng": -93.93358359914207
-      }
-   },
-   {
-      "id": 13,
-      "name": "XL9JD7",
-      "status": "Normal",
-      "temp": 83.0,
-      "battery": 87,
-      "voltage": 241,
-      "position": {
-         "lat": 39.94106679020604,
-         "lng": -93.9337338028469
-      }
-   },
-   {
-      "id": 14,
-      "name": "NW5PS8",
-      "status": "Normal",
-      "temp": 83.1,
-      "battery": 86,
-      "voltage": 241,
-      "position": {
-         "lat": 39.94663396019763,
-         "lng": -93.93860566092835
-      }
-   },
-   {
-      "id": 15,
-      "name": "ME6SP4",
-      "status": "Normal",
-      "temp": 83.1,
-      "battery": 88,
-      "voltage": 241,
-      "position": {
-         "lat": 39.94314639284879,
-         "lng": -93.93568741752014
-      }
-   },
-   {
-      "id": 16,
-      "name": "AU8WB2",
-      "status": "Normal",
-      "temp": 83.0,
-      "battery": 84,
-      "voltage": 241,
-      "position": {
-         "lat": 39.94658460906957,
-         "lng": -93.9406870551239
-      }
-   },
-   {
-      "id": 17,
-      "name": "KW5HS7",
-      "status": "Normal",
-      "temp": 83.2,
-      "battery": 44,
-      "voltage": 241,
-      "position": {
-         "lat": 39.953894890216304,
-         "lng": -93.93880096553917
-      }
-   },
-   {
-      "id": 18,
-      "name": "NK9XP4",
-      "status": "Normal",
-      "temp": 83.2,
-      "battery": 78,
-      "voltage": 241,
-      "position": {
-         "lat": 39.95716209848177,
-         "lng": -93.93901379279187
-      }
-   }
+  {
+    "id": 0,
+    "name": "QG4YC9",
+    "status": "Normal",
+    "temp": 83.1,
+    "battery": 90,
+    "voltage": 241,
+    "position": {
+      "lat": 39.93430206724242,
+      "lng": -93.9244953865776
+    }
+  },
+  {
+    "id": 1,
+    "name": "AB3CD6",
+    "status": "Normal",
+    "temp": 83.2,
+    "battery": 91,
+    "voltage": 242,
+    "position": {
+      "lat": 39.93461467989428,
+      "lng": -93.92446320006943
+    }
+  },
+  {
+    "id": 2,
+    "name": "DX4SZ3",
+    "status": "Normal",
+    "temp": 83.1,
+    "battery": 88,
+    "voltage": 241,
+    "position": {
+      "lat": 39.93542911141305,
+      "lng": -93.92419497916794
+    }
+  },
+  {
+    "id": 3,
+    "name": "KD9FJ7",
+    "status": "Normal",
+    "temp": 83.0,
+    "battery": 75,
+    "voltage": 242,
+    "position": {
+      "lat": 39.93282018008162,
+      "lng": -93.92582754597471
+    }
+  },
+  {
+    "id": 4,
+    "name": "MN9PW3",
+    "status": "Normal",
+    "temp": 83.2,
+    "battery": 91,
+    "voltage": 241,
+    "position": {
+      "lat": 39.93199749057335,
+      "lng": -93.92443279728697
+    }
+  },
+  {
+    "id": 5,
+    "name": "WV3GQ8",
+    "status": "Normal",
+    "temp": 83.0,
+    "battery": 54,
+    "voltage": 241,
+    "position": {
+      "lat": 39.93225327906664,
+      "lng": -93.92822422118013
+    }
+  },
+  {
+    "id": 6,
+    "name": "BP6SJ4",
+    "status": "Normal",
+    "temp": 83.2,
+    "battery": 89,
+    "voltage": 241,
+    "position": {
+      "lat": 39.93215455603006,
+      "lng": -93.93350280852144
+    }
+  },
+  {
+    "id": 7,
+    "name": "JE4UX5",
+    "status": "Normal",
+    "temp": 83.0,
+    "battery": 95,
+    "voltage": 242,
+    "position": {
+      "lat": 39.92934088963081,
+      "lng": -93.9333526048166
+    }
+  },
+  {
+    "id": 8,
+    "name": "FG1TW5",
+    "status": "Normal",
+    "temp": 83.2,
+    "battery": 66,
+    "voltage": 242,
+    "position": {
+      "lat": 39.93042687984082,
+      "lng": -93.92981208891695
+    }
+  },
+  {
+    "id": 9,
+    "name": "DP8JS5",
+    "status": "Normal",
+    "temp": 83.1,
+    "battery": 77,
+    "voltage": 240,
+    "position": {
+      "lat": 39.93209701578556,
+      "lng": -93.92253781219776
+    }
+  },
+  {
+    "id": 10,
+    "name": "ZG5JA9",
+    "status": "Critical",
+    "temp": 165.0,
+    "battery": 85,
+    "voltage": 242,
+    "position": {
+      "lat": 39.94319249773023,
+      "lng": -93.92411868903856
+    }
+  },
+  {
+    "id": 11,
+    "name": "BX4QK5",
+    "status": "Warning",
+    "temp": 83.1,
+    "battery": 15,
+    "voltage": 242,
+    "position": {
+      "lat": 39.94000089096174,
+      "lng": -93.92401140067797
+    }
+  },
+  {
+    "id": 12,
+    "name": "NW3SU2",
+    "status": "Normal",
+    "temp": 83.0,
+    "battery": 89,
+    "voltage": 242,
+    "position": {
+      "lat": 39.93618045826889,
+      "lng": -93.93358359914207
+    }
+  },
+  {
+    "id": 13,
+    "name": "XL9JD7",
+    "status": "Normal",
+    "temp": 83.0,
+    "battery": 87,
+    "voltage": 241,
+    "position": {
+      "lat": 39.94106679020604,
+      "lng": -93.9337338028469
+    }
+  },
+  {
+    "id": 14,
+    "name": "NW5PS8",
+    "status": "Normal",
+    "temp": 83.1,
+    "battery": 86,
+    "voltage": 241,
+    "position": {
+      "lat": 39.94663396019763,
+      "lng": -93.93860566092835
+    }
+  },
+  {
+    "id": 15,
+    "name": "ME6SP4",
+    "status": "Normal",
+    "temp": 83.1,
+    "battery": 88,
+    "voltage": 241,
+    "position": {
+      "lat": 39.94314639284879,
+      "lng": -93.93568741752014
+    }
+  },
+  {
+    "id": 16,
+    "name": "AU8WB2",
+    "status": "Normal",
+    "temp": 83.0,
+    "battery": 84,
+    "voltage": 241,
+    "position": {
+      "lat": 39.94658460906957,
+      "lng": -93.9406870551239
+    }
+  },
+  {
+    "id": 17,
+    "name": "KW5HS7",
+    "status": "Normal",
+    "temp": 83.2,
+    "battery": 44,
+    "voltage": 241,
+    "position": {
+      "lat": 39.953894890216304,
+      "lng": -93.93880096553917
+    }
+  },
+  {
+    "id": 18,
+    "name": "NK9XP4",
+    "status": "Normal",
+    "temp": 83.2,
+    "battery": 78,
+    "voltage": 241,
+    "position": {
+      "lat": 39.95716209848177,
+      "lng": -93.93901379279187
+    }
+  }
 ]

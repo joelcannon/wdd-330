@@ -1,26 +1,26 @@
 [
-   {
-      "status": "Critical",
-      "timestamp": "23-12-11 18:09",
-      "message": "Power Outage",
-      "deviceId": "10"
-   },
-   {
-      "status": "Critical",
-      "timestamp": "23-12-11 18:08",
-      "message": "Lightning Strike",
-      "deviceId": "10"
-   },
-   {
-      "status": "Warning",
-      "timestamp": "23-12-10 10:32",
-      "message": "Low Battery",
-      "deviceId": "11"
-   },
-   {
-      "status": "Normal",
-      "timestamp": "23-12-08  9:08",
-      "message": "New Installation",
-      "deviceId": "18"
-   }
+  {
+    "status": "Critical",
+    "timestamp": "23-12-11 18:09",
+    "message": "Power Outage",
+    "deviceId": "10"
+  },
+  {
+    "status": "Critical",
+    "timestamp": "23-12-11 18:08",
+    "message": "Lightning Strike",
+    "deviceId": "10"
+  },
+  {
+    "status": "Warning",
+    "timestamp": "23-12-10 10:32",
+    "message": "Low Battery",
+    "deviceId": "11"
+  },
+  {
+    "status": "Normal",
+    "timestamp": "23-12-08  9:08",
+    "message": "New Installation",
+    "deviceId": "18"
+  }
 ]

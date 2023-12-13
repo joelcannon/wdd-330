@@ -18,9 +18,9 @@ function loadGoogleMapsAPI(config) {
     // Function to load the script
     loadScript = () =>
       loadPromise ||
-      (loadPromise = new Promise(async (resolve, reject) => {
+      (loadPromise = new Promise((resolve, reject) => {
         // Create a new script element
-        await (scriptElement = documentRef.createElement('script'));
+        scriptElement = documentRef.createElement('script');
         // Set the libraries URL parameter
         urlParams.set('libraries', [...libraries] + '');
         // Set the other URL parameters based on the config object
