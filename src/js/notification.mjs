@@ -34,3 +34,27 @@ for (const sortable of sortables) {
     sortable.classList.add('selected');
   });
 }
+
+// Fetch the JSON file
+fetch('/json/notification.json')
+  .then((response) => response.json())
+  .then((data) => {
+    // Get the table body
+    const tbody = document.querySelector('#notifications-table tbody');
+
+    // Create a table row for each item in the data
+    for (const item of data) {
+      const row = document.createElement('tr');
+
+      // Create a table cell for each property of the item
+      for (const key in item) {
+        const cell = document.createElement('td');
+        cell.textContent = item[key];
+        row.appendChild(cell);
+      }
+
+      // Add the row to the table body
+      tbody.appendChild(row);
+    }
+  })
+  .catch((error) => console.error('Error:', error));

@@ -1,0 +1,12 @@
+[
+   {
+      "status": "Critical",
+      "timestamp": "2022-01-01T00:00:00Z",
+      "message": "This is a critical notification."
+   },
+   {
+      "status": "Warning",
+      "timestamp": "2022-01-02T00:00:00Z",
+      "message": "This is a warning notification."
+   }
+]
