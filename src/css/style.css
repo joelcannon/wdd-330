@@ -43,6 +43,15 @@ header {
   font-family: var(--font-headline);
 }
 
+.title {
+  line-height: 45px; /* --header-height */
+  overflow: hidden;
+  display: flex;
+  font-size: 30px;
+  text-align: left;
+  font-family: var(--font-headline);
+}
+
 .highlight {
   color: var(--tertiary-color);
 }

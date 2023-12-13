@@ -1,6 +1,6 @@
 import { loadHeader } from './utils.mjs';
 
-loadHeader();
+loadHeader('Notice');
 
 // Get the table element
 const table = document.getElementById('notifications-table');

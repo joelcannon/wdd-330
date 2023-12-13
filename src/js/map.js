@@ -1,55 +1,80 @@
-import { Loader } from '@googlemaps/js-api-loader';
-import { loadMarkersFromLocalStorage } from './utils.mjs';
-import { loadMarkersFromJsonFile } from './externalServices.mjs';
+import { MarkerClusterer } from '@googlemaps/markerclusterer';
+import { loadDeviceMarkersFromJsonFile } from './externalServices.mjs';
 import { loadHeader } from './utils.mjs';
 
-loadHeader();
-
-// console.log(import.meta.env.VITE_APP_VERSION);
+loadHeader('Map');
 
 /* global google */
-
-const loader = new Loader({
-  apiKey: 'AIzaSyA5_4E24xxgD4akSaTxi1Bs2QRsSLEqOIM',
-  version: 'weekly',
-});
-
-loader.load().then(() => {
+async function initMap() {
+  // Request needed libraries.
+  const { Map, InfoWindow } = await google.maps.importLibrary('maps');
+  const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary(
+    'marker'
+  );
   const map = new google.maps.Map(document.getElementById('map'), {
-    //  center: { lat: 39.930213, lng: -93.932722 },
+    zoom: 15,
     center: { lat: 39.93459, lng: -93.924026 },
-    zoom: 18,
     mapTypeId: 'satellite',
+    mapId: 'DEMO_MAP_ID',
+  });
+  const infoWindow = new google.maps.InfoWindow({
+    content: '',
+    disableAutoPan: true,
+  });
+  // Create an array of alphabetical characters used to label the markers.
+  // const labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+  // Load locations from JSON file
+  const tempMarkers = await loadDeviceMarkersFromJsonFile();
+  const locations = tempMarkers.map((item) => item.position);
+
+  // Add some markers to the map.
+  const markers = tempMarkers.map((device, i) => {
+    // A marker using a Font Awesome icon for the glyph.
+    const icon = document.createElement('div');
+    icon.innerHTML = '<i class="fab fa-viacoin" aria-hidden="true"></i>';
+    const faPin = new google.maps.marker.PinElement({
+      glyph: icon,
+      glyphColor: 'white',
+      background: 'darkgreen',
+      borderColor: 'white',
+    });
+
+    const detail = document.createElement('div');
+
+    detail.className = 'detail';
+
+    if (device.status === 'Critical') {
+      detail.classList.add('critical');
+    } else if (device.status === 'Warning') {
+      detail.classList.add('warning');
+    }
+
+    detail.innerHTML =
+      '<i class="fab fa-viacoin icon-shadow" aria-hidden="true"></i>';
+
+    const marker = new google.maps.marker.AdvancedMarkerElement({
+      position: device.position,
+      content: detail,
+    });
+
+    const contentString = `<div class='d_name'><b>${device.name}</b></div>
+    <div class='d_status'>${device.status}</div>
+    <div class='d_stats'>
+    ${device.temp}°F, ${device.battery}%, ${device.voltage}v
+    </div>`;
+
+    // markers can only be keyboard focusable when they have click listeners
+    // open info window when marker is clicked
+    marker.addListener('click', () => {
+      infoWindow.setContent(contentString);
+      infoWindow.open(map, marker);
+    });
+    return marker;
   });
 
-  let markers = loadMarkersFromLocalStorage();
+  // Add a marker clusterer to manage the markers.
+  const markerCluster = new MarkerClusterer({ markers, map });
+}
 
-  if (markers.length === 0) {
-    loadMarkersFromJsonFile().then((data) => {
-      markers = data;
-      markers.forEach((markerData) => {
-        new google.maps.Marker({
-          position: markerData.position,
-          map: map,
-        });
-      });
-    });
-  } else {
-    markers.forEach((markerData) => {
-      new google.maps.Marker({
-        position: markerData.position,
-        map: map,
-      });
-    });
-  }
-
-  // Add click event listener to map
-  google.maps.event.addListener(map, 'click', function (event) {
-    // new google.maps.Marker({
-    //   position: event.latLng,
-    //   map: map,
-    // });
-  });
-});
-
-console.log('map.js loaded');
+initMap();

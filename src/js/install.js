@@ -5,7 +5,7 @@ import {
 } from './utils.mjs';
 import { loadHeader } from './utils.mjs';
 
-loadHeader();
+loadHeader('Install');
 
 /* global google */
 

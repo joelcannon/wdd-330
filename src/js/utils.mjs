@@ -61,19 +61,16 @@ function loadTemplate(path) {
   };
 }
 
-export async function loadHeader() {
+function setTitle(data) {
+  // Get the title element
+  const titleElement = document.querySelector('.title');
+
+  // Set the title
+  titleElement.textContent = data.title;
+}
+
+export async function loadHeader(title = '') {
   const headerTemplateFn = loadTemplate('/partials/header.html');
   const headerEl = document.querySelector('#main-header');
-  await renderWithTemplate(headerTemplateFn, headerEl);
-
-  // const searchForm = document.getElementById('search-form');
-
-  // searchForm.addEventListener('submit', function (event) {
-  //   event.preventDefault();
-
-  //   const searchFunction = handleProductSearch();
-  //   searchFunction();
-  // });
-
-  // renderWithTemplate(footerTemplateFn, footerEl);
+  await renderWithTemplate(headerTemplateFn, headerEl, setTitle, { title });
 }
