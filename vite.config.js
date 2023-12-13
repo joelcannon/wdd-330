@@ -13,6 +13,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'src/index.html'),
         map: resolve(__dirname, 'src/map/index.html'),
+        notice: resolve(__dirname, 'src/notice/index.html'),
         install: resolve(__dirname, 'src/install/index.html'),
         device: resolve(__dirname, 'src/device/index.html'),
         // checkout: resolve(__dirname, "src/checkout/index.html"),
