@@ -275,3 +275,36 @@ section p {
   height: 100%;
   object-fit: cover;
 }
+
+.icon-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  flex: 1; /* This will make the links take up equal space */
+}
+
+.icon-link span {
+  margin-top: 5px;
+}
+
+.icon-link .fas {
+  font-size: 2em; /* This will make the icons larger */
+  color: black; /* Change this to the color you want */
+}
+
+.icon-container {
+  display: flex;
+  gap: 10px;
+  margin: 20px; /* Adjust this value as needed */
+}
+
+.icon-link:hover .fas {
+  color: blue; /* Change color on hover */
+}
+
+.icon-link:active .fas {
+  transform: scale(0.9); /* Shrink icon slightly when clicked */
+}
