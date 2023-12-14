@@ -12,12 +12,19 @@ async function initMap(id) {
   const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary(
     'marker'
   );
-  const map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 15,
-    center: { lat: 39.93459, lng: -93.924026 },
-    mapTypeId: 'satellite',
-    mapId: 'DEMO_MAP_ID',
-  });
+  let map; // Declare map variable here
+
+  try {
+    map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 15,
+      center: { lat: 39.93459, lng: -93.924026 },
+      mapTypeId: 'satellite',
+      mapId: 'DEMO_MAP_ID',
+    });
+  } catch (error) {
+    console.error('Error initializing map:', error);
+  }
+
   const infoWindow = new google.maps.InfoWindow({
     content: '',
     disableAutoPan: true,
@@ -43,7 +50,7 @@ async function initMap(id) {
     const faPin = new google.maps.marker.PinElement({
       glyph: icon,
       glyphColor: 'white',
-      background: 'green',
+      background: 'darkgreen',
       borderColor: 'white',
     });
 
@@ -81,6 +88,9 @@ async function initMap(id) {
     });
     return marker;
   });
+
+  // Add a marker clusterer to manage the markers.
+  const markerCluster = new MarkerClusterer({ markers, map });
 }
 
 initMap(deviceId);
